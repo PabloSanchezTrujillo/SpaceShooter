@@ -1,4 +1,4 @@
-// Author: Pablo Sánchez
+// Author: Pablo Sanchez
 
 #pragma once
 
@@ -24,5 +24,5 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION(BlueprintCallable)
-	void Collision(AActor* OtherActor);	
+	bool CollisionWithPlayer(AActor* OtherActor);	
 };

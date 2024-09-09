@@ -1,4 +1,4 @@
-// Author: Pablo Sánchez
+// Author: Pablo Sanchez
 
 #pragma once
 

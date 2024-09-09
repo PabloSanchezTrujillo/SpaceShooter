@@ -1,7 +1,6 @@
-// Author: Pablo Sánchez
+// Author: Pablo Sanchez
 
 #include "Asteroid.h"
-
 #include "Spaceship.h"
 
 // Sets default values
@@ -25,9 +24,9 @@ void AAsteroid::Tick(float DeltaTime)
 
 }
 
-void AAsteroid::Collision(AActor* OtherActor)
+bool AAsteroid::CollisionWithPlayer(AActor* OtherActor)
 {
-	if(OtherActor->Tags.IsEmpty()) return;
+	if(OtherActor->Tags.IsEmpty()) return false;
 
 	if(OtherActor->Tags[0].ToString() == "Kill")
 	{
@@ -37,6 +36,10 @@ void AAsteroid::Collision(AActor* OtherActor)
 	{
 		ASpaceship* Player = Cast<ASpaceship>(OtherActor);
 		Destroy();
+
+		return true;
 	}
+
+	return false;
 }
 
