@@ -72,3 +72,5 @@ Plugins/**/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+SpaceShooter/Intermediate/Build/Win64
+SpaceShooter/Binaries/Win64
