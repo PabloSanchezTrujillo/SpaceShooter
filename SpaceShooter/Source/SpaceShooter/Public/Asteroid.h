@@ -10,8 +10,8 @@ UCLASS()
 class SPACESHOOTER_API AAsteroid : public AActor
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
 	AAsteroid();
 
@@ -19,10 +19,13 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	UFUNCTION(BlueprintCallable)
-	bool CollisionWithPlayer(AActor* OtherActor);	
+	bool CollisionWithPlayer(AActor* OtherActor);
+
+	UFUNCTION(BlueprintCallable)
+	void SpawnPlayerCollisionVFX(UClass* VFX, USoundBase* SoundBase);
 };
