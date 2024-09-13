@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "Asteroid.h"
-#include "GameFramework/Actor.h"
 #include "AsteroidsSpawner.generated.h"
 
 UCLASS()
@@ -14,7 +13,7 @@ class SPACESHOOTER_API AAsteroidsSpawner : public AActor
 
 public:
 	UPROPERTY(EditAnywhere)
-	TSet<AAsteroid*> AsteroidsPool;
+	TArray<AAsteroid*> AsteroidsList;
 
 	// Sets default values for this actor's properties
 	AAsteroidsSpawner();
@@ -26,4 +25,7 @@ protected:
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+	UFUNCTION(BlueprintCallable)
+	AAsteroid* GetAsteroidFromPool();
 };
