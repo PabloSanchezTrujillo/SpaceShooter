@@ -1,6 +1,8 @@
 // Author: Pablo Sanchez
 
 #include "Asteroid.h"
+
+#include "GameTags.h"
 #include "Spaceship.h"
 #include "Kismet/GameplayStatics.h"
 
@@ -35,7 +37,7 @@ bool AAsteroid::CollisionWithPlayer(AActor* OtherActor)
 		return false;
 	}
 
-	if (OtherActor->Tags[0].ToString() == "Spaceship")
+	if (OtherActor->Tags[0] == GameTags::GetTagName(GameTags::Spaceship))
 	{
 		ASpaceship* Player = Cast<ASpaceship>(OtherActor);
 		Player->SubstractLife();
@@ -53,7 +55,7 @@ bool AAsteroid::CollisionWithDestroyVolume(AActor* OtherActor)
 		return false;
 	}
 
-	if (OtherActor->Tags[0] == "Destroy")
+	if (OtherActor->Tags[0] == GameTags::GetTagName(GameTags::Destroy))
 	{
 		return true;
 	}
